@@ -6,6 +6,8 @@ context:
   python_check_max: "3.13"
   selenium_min: "4.0"
   selenium_max_inclusive: "4.16"
+  appium_min: "2.7.1"
+  appium_max_exclusive: "4.0.0"
 
 package:
   name: robotframework-appiumlibrary
@@ -28,13 +30,13 @@ requirements:
     - python ${{ python_min }}.*
     - setuptools
   run:
-    - appium-python-client >=2.7.1,<4.0.0
+    - appium-python-client >=${{ appium_min }},<${{ appium_max_exclusive }}
     - decorator >=3.3.2
     - docutils >=0.8.1
     - kitchen >=1.2.4
     - python >=${{ python_min }}
     - robotframework >=2.6.0
-    - selenium >=4.0,<=4.16
+    - selenium >=${{ selenium_min }},<=${{ selenium_max_inclusive }}
     - six >=1.10.0
 
 tests:
@@ -48,6 +50,7 @@ tests:
       run:
         - ${{ python_min }}.*
         - ${{ selenium_min }}.*
+        - ${{ appium_min }}.*
     script:
       - python -c "import AppiumLibrary; assert AppiumLibrary.__version__ == '${{ version }}'"
   - requirements:
