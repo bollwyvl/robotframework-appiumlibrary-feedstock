@@ -12,7 +12,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/robotframework-appiumlibrary-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/r/robotframework-appiumlibrary/robotframework-appiumlibrary-${{ version }}.tar.gz
   sha256: d01b1ed21e79996a790ffb7ad475862f6e9427770a9c88314065b1c59ce2d52c
 
 build:
